@@ -36,6 +36,8 @@ class Menu(models.Model):
     def __str__(self):
         return "Speisekarte für " + str(self.date.strftime("%d.%m.%Y"))
 
+def default_end_date():
+    return (timezone.now()+timedelta(days=7)).date()
 
 class Advertisement(models.Model):
     """
@@ -50,7 +52,7 @@ class Advertisement(models.Model):
     end_date = models.DateField(verbose_name="Enddatum",
                                 editable=True,
                                 blank=False,
-                                default=timezone.now()+timedelta(days=7))
+                                default=default_end_date)
     image = models.ImageField(verbose_name="Grafik", blank=False)
     text = models.TextField(verbose_name="Nachricht", max_length=280, blank=True)
 
