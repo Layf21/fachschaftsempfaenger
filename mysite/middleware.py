@@ -1,5 +1,5 @@
 from datetime import datetime
-import pytz
+from zoneinfo import ZoneInfo
 
 class MyMiddleware:
 
@@ -8,5 +8,5 @@ class MyMiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        response['X-Generated-On'] = datetime.now(pytz.timezone('Europe/Berlin')).strftime("%c")
+        response['X-Generated-On'] = datetime.now(ZoneInfo('Europe/Berlin')).strftime("%c")
         return response

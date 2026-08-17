@@ -2,7 +2,6 @@ import datetime
 
 from django import template
 
-from pytz import timezone
 
 register = template.Library()
 
