@@ -37,7 +37,7 @@
 /* Base Styles */
 html, body {
     height: 100%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', 'Noto Color Emoji', sans-serif;
     font-size: 18px;
     line-height: 1.5;
     color: var(--text-color);
